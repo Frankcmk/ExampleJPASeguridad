@@ -1,9 +1,9 @@
  spring:
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/testClase?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: root
-    password: chendo22
+    driverClassName: org.postgresql.Driver
+    url: postgres://mbrscntdmkhjig:dc338e6955ca6f961fd16f058a3c69e6ae5f6767966e16630b01d8b79c5e08a6@ec2-23-23-195-205.compute-1.amazonaws.com:5432/d3o38g7kaofdoc
+    username: mbrscntdmkhjig
+    password: dc338e6955ca6f961fd16f058a3c69e6ae5f6767966e16630b01d8b79c5e08a6
     maxActive: 10
     maxIdle: 5
     minIdle: 2
@@ -19,7 +19,7 @@
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
       hibernate:
-         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+         dialect: org.hibernate.dialect.MySQL5Dialect
 
   thymeleaf:
     cache: true
