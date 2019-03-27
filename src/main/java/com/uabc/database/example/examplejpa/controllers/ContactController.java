@@ -43,7 +43,7 @@ public class ContactController {
 
     @PostMapping("/addcontact")
     //El ModelAttribute corresponde con el th:object que utilizamos en la vista de contactform
-    public String addContact(@ModelAttribute(name = "contactModel")ContactModel contactModel,
+    public String addContact(@ModelAttribute(name = "contactModel") ContactModel contactModel,
                              Model model){
         log.info("Method: addContact() -- Params: "+contactModel.toString());
         if(contactService.addContact(contactModel) != null){

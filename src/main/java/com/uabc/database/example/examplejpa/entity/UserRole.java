@@ -1,10 +1,7 @@
 package com.uabc.database.example.examplejpa.entity;
 
-import lombok.Data;
-
 import javax.persistence.*;
 
-@Data
 @Entity
 @Table(name = "user_roles", uniqueConstraints = @UniqueConstraint(
         columnNames = {"role", "username"}
@@ -31,4 +28,27 @@ public class UserRole {
         this.role = role;
     }
 
+    public Integer getUserRoleId() {
+        return userRoleId;
+    }
+
+    public void setUserRoleId(Integer userRoleId) {
+        this.userRoleId = userRoleId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }

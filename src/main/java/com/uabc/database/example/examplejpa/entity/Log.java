@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+
 @Data
 @Entity
 @Table(name = "log")
@@ -31,6 +32,10 @@ public class Log {
         this.details = details;
         this.username = username;
         this.url = url;
+    }
+
+    public Log() {
+
     }
 
 }
