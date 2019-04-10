@@ -7,6 +7,7 @@ import com.uabc.database.example.examplejpa.repository.UserRepository;
 import com.uabc.database.example.examplejpa.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,9 +24,13 @@ public class UserServiceImpl implements UserService {
     @Qualifier("userConverter")
     private UserConverter userConverter;
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     @Override
     public UserModel addUser(UserModel userModel) {
         User temp = userConverter.convertUserModel2User(userModel);
+        temp.setPassword(bCryptPasswordEncoder.encode(temp.getPassword()));
         User user = userRepository.save(temp);
         return userConverter.convertUser2UserModel(user);
     }

@@ -30,6 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
+                //Paginas donde todos los usuarios pueden entrar sin autentificar
                 //.antMatchers("/", "/contacts/**", "/users/**").permitAll()
 
                 .anyRequest().authenticated()

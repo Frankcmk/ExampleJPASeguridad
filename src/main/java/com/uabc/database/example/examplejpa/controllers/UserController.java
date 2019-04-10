@@ -2,6 +2,7 @@ package com.uabc.database.example.examplejpa.controllers;
 
 import com.uabc.database.example.examplejpa.constant.ViewConstant;
 import com.uabc.database.example.examplejpa.model.UserModel;
+import com.uabc.database.example.examplejpa.services.SecurityService;
 import com.uabc.database.example.examplejpa.services.UserService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -19,6 +20,10 @@ public class UserController {
     @Autowired
     @Qualifier("userServiceImpl")
     private UserService userService;
+
+    @Autowired
+    @Qualifier("securityServiceImpl")
+    private SecurityService securityService;
 
     private static final Log log = LogFactory.getLog(UserController.class);
 
